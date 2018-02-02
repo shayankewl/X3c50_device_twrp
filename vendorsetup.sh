@@ -1,0 +1,3 @@
+add_lunch_combo omni_X3c50-eng
+add_lunch_combo omni_X3c50-user
+add_lunch_combo omni_X3c50-userdebug
