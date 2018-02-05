@@ -13,9 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Release name
+PRODUCT_RELEASE_NAME := X3c50
+
 
 # Inherit device configuration
 $(call inherit-product, device/lenovo/X3c50/full_X3c50.mk)
+$(call inherit-product, build/target/product/embedded.mk)
+
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
@@ -35,7 +42,14 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=Lenovo/X3c50/X3c50:6.0.1/MMB29M/VIBEUI_V3.1_1626_5.565.1_ST_X3c50:user/release-keys \
     PRIVATE_BUILD_DESC="X3c50-user 6.0.1 MMB29M VIBEUI_V3.1_1626_5.565.1_ST_X3c50 release-keys"
 
+TARGET_VENDOR_PRODUCT_NAME := X3c50
+TARGET_VENDOR_DEVICE_NAME := X3c50
+PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=X3c50 PRODUCT_NAME=X3c50
+
+
 PRODUCT_NAME := omni_X3c50
+
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST += ro.product.model
 
 
 
